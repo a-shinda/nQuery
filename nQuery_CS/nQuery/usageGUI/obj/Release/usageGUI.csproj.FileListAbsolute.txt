@@ -1,0 +1,10 @@
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\bin\Release\usageGUI.exe
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\bin\Release\usageGUI.pdb
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\bin\Release\nQuery.dll
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\bin\Release\nQuery.pdb
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\obj\Release\ResolveAssemblyReference.cache
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\obj\Release\usageGUI.Form1.resources
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\obj\Release\usageGUI.Properties.Resources.resources
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\obj\Release\usageGUI.csproj.GenerateResource.Cache
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\obj\Release\usageGUI.exe
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery\usageGUI\obj\Release\usageGUI.pdb

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nQuery", "nQuery\nQuery.csproj", "{F71CCD49-3E1C-4288-B3E6-3ADE88C6061C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usageGUI", "usageGUI\usageGUI.csproj", "{092986E6-D99E-457A-BA97-90339A6C1CBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F71CCD49-3E1C-4288-B3E6-3ADE88C6061C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71CCD49-3E1C-4288-B3E6-3ADE88C6061C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71CCD49-3E1C-4288-B3E6-3ADE88C6061C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71CCD49-3E1C-4288-B3E6-3ADE88C6061C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092986E6-D99E-457A-BA97-90339A6C1CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092986E6-D99E-457A-BA97-90339A6C1CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092986E6-D99E-457A-BA97-90339A6C1CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092986E6-D99E-457A-BA97-90339A6C1CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
