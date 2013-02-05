@@ -143,6 +143,11 @@ namespace usageGUI
             { }
         }
 
+        /// <summary>
+        /// 拡大ボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnScaleUp_Click(object sender, EventArgs e)
         {
             try
@@ -162,6 +167,11 @@ namespace usageGUI
             }
         }
 
+        /// <summary>
+        /// 縮小ボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnScaleDown_Click(object sender, EventArgs e)
         {
             try
