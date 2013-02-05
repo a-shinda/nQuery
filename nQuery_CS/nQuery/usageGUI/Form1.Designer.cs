@@ -46,11 +46,11 @@
             this.btnScaleUp = new System.Windows.Forms.Button();
             this.pnlSizeTarget = new System.Windows.Forms.Panel();
             this.btnScaleDown = new System.Windows.Forms.Button();
-            this.transparentPanel1 = new usageGUI.TransparentPanel();
+            this.transparentPanel1 = new nQueryLib.UI.TransparentPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.transparentLabel1 = new usageGUI.TransparentLabel();
+            this.transparentLabel1 = new nQueryLib.UI.TransparentPanel();
             this.panel2.SuspendLayout();
             this.transparentPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -315,7 +315,7 @@
         private System.Windows.Forms.Button butMoveStop;
         private System.Windows.Forms.Panel pnlMoveTarget;
         private System.Windows.Forms.TextBox textBox1;
-        private TransparentLabel transparentLabel1;
+        private nQueryLib.UI.TransparentPanel transparentLabel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
@@ -323,7 +323,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button3;
-        private TransparentPanel transparentPanel1;
+        private nQueryLib.UI.TransparentPanel transparentPanel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;

@@ -1,4 +1,4 @@
-﻿namespace usageGUI
+﻿namespace nQueryLib.UI
 {
     partial class TransparentLabel
     {

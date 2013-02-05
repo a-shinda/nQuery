@@ -77,18 +77,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TransparentLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TransparentLabel.Designer.cs">
-      <DependentUpon>TransparentLabel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TransparentPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TransparentPanel.Designer.cs">
-      <DependentUpon>TransparentPanel.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nQuery\nQuery.csproj">

@@ -1,0 +1,5 @@
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\nQuery\bin\Debug\nQuery.dll
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\nQuery\bin\Debug\nQuery.pdb
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\nQuery\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\nQuery\obj\Debug\nQuery.dll
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\nQuery\obj\Debug\nQuery.pdb
