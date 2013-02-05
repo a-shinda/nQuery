@@ -36,6 +36,7 @@ namespace nQueryLib
                 return ret;
             }
         }
+
     }
 }
 
@@ -69,6 +70,28 @@ namespace nQueryLib.Core
 
         }
 
+        /// <summary>
+        /// マウスポイントが対象コントロールのクライアント領域にある場合：true / それ以外：false
+        /// </summary>
+        public bool IsMouseUnder
+        {
+            get {
+
+                Rectangle rect = _targetCtrl.ClientRectangle;
+                return  GetContainState(_targetCtrl, rect);
+            }
+        }
+
+        private bool GetContainState(Control ctrl, Rectangle rect)
+        {
+            // マウス座標（スクリーン座標系）の取得
+            Point mouseScreenPos = Control.MousePosition;
+            // マウス座標をクライアント座標系へ変換
+            Point mouseClientPos = ctrl.PointToClient(mouseScreenPos);
+            // マウス座標（クライアント座標系）が領域内かどうか
+            return rect.Contains(mouseClientPos);
+        }
+
         private Point _OriginalPos = new Point(0,0);
         /// <summary>
         /// 動作開始時のポジション
@@ -87,6 +110,7 @@ namespace nQueryLib.Core
         private Form _parentForm = null;
         private System.Threading.Timer _moveTimer = null;
         private System.Threading.Timer _sizeTimer = null;
+        Point endPos = new Point(0,0);
 
         /// <summary>
         /// アニメーションの停止処理
@@ -154,7 +178,7 @@ namespace nQueryLib.Core
             }
 
             // ここまで移動したら終了
-            Point endPos = new Point(x, y);
+            endPos = new Point(x, y);
             x = x - _targetCtrl.Location.X;
             y = y - _targetCtrl.Location.Y;
 
@@ -338,6 +362,8 @@ namespace nQueryLib.Core
                         // +方向の動作
                         if (endPos.X <= this._targetCtrl.Location.X)
                         {
+                            if (endPos.X < this._targetCtrl.Location.X)
+                                this._targetCtrl.Location = new Point( endPos.X, this._targetCtrl.Location.Y);
                             xEndFlg = true;
                         }
                     }
@@ -346,6 +372,8 @@ namespace nQueryLib.Core
                         // -方向の動作
                         if (endPos.X >= this._targetCtrl.Location.X)
                         {
+                            if (endPos.X > this._targetCtrl.Location.X)
+                                this._targetCtrl.Location = new Point(endPos.X, this._targetCtrl.Location.Y);
                             xEndFlg = true;
                         }
                     }
@@ -354,6 +382,8 @@ namespace nQueryLib.Core
                     {
                         if (endPos.Y <= this._targetCtrl.Location.Y)
                         {
+                            if (endPos.Y < this._targetCtrl.Location.Y)
+                                this._targetCtrl.Location = new Point(this._targetCtrl.Location.X, endPos.Y);
                             yEndFlg = true;
                         }
                     }
@@ -361,6 +391,8 @@ namespace nQueryLib.Core
                     {
                         if (endPos.Y >= this._targetCtrl.Location.Y)
                         {
+                            if (endPos.Y > this._targetCtrl.Location.Y)
+                                this._targetCtrl.Location = new Point(this._targetCtrl.Location.X, endPos.Y);
                             yEndFlg = true;
                         }
                     }
@@ -376,7 +408,6 @@ namespace nQueryLib.Core
                     }
 
                     #endregion
-
                 }));
 
             }, null, 0, 10); // 0.01秒サイクルで動作する
@@ -401,7 +432,9 @@ namespace nQueryLib.Core
         private void DoDisposeTimer()
         {
             if (this._moveTimer != null)
+            {
                 this._moveTimer.Dispose();
+            }
 
             if (this._sizeTimer != null)
                 this._sizeTimer.Dispose();

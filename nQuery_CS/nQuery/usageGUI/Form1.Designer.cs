@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.butDoup = new System.Windows.Forms.Button();
+            this.butMoveStop = new System.Windows.Forms.Button();
+            this.pnlMoveTarget = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDoDown = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTop = new System.Windows.Forms.Label();
             this.lblUnder = new System.Windows.Forms.Label();
@@ -52,33 +52,33 @@
             this.transparentPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // butDoup
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Up";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.butDoup.Location = new System.Drawing.Point(12, 12);
+            this.butDoup.Name = "butDoup";
+            this.butDoup.Size = new System.Drawing.Size(75, 23);
+            this.butDoup.TabIndex = 0;
+            this.butDoup.Text = "Start Up";
+            this.butDoup.UseVisualStyleBackColor = true;
+            this.butDoup.Click += new System.EventHandler(this.butDoup_Click);
             // 
-            // button2
+            // butMoveStop
             // 
-            this.button2.Location = new System.Drawing.Point(93, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.butMoveStop.Location = new System.Drawing.Point(93, 12);
+            this.butMoveStop.Name = "butMoveStop";
+            this.butMoveStop.Size = new System.Drawing.Size(75, 23);
+            this.butMoveStop.TabIndex = 1;
+            this.butMoveStop.Text = "Stop";
+            this.butMoveStop.UseVisualStyleBackColor = true;
+            this.butMoveStop.Click += new System.EventHandler(this.btnMoveStop_Click);
             // 
-            // panel1
+            // pnlMoveTarget
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(90, 90);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(36, 37);
-            this.panel1.TabIndex = 2;
+            this.pnlMoveTarget.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlMoveTarget.Location = new System.Drawing.Point(90, 90);
+            this.pnlMoveTarget.Name = "pnlMoveTarget";
+            this.pnlMoveTarget.Size = new System.Drawing.Size(36, 37);
+            this.pnlMoveTarget.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -149,15 +149,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button7
+            // btnDoDown
             // 
-            this.button7.Location = new System.Drawing.Point(12, 41);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Start Down";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnDoDown.Location = new System.Drawing.Point(12, 41);
+            this.btnDoDown.Name = "btnDoDown";
+            this.btnDoDown.Size = new System.Drawing.Size(75, 23);
+            this.btnDoDown.TabIndex = 11;
+            this.btnDoDown.Text = "Start Down";
+            this.btnDoDown.UseVisualStyleBackColor = true;
+            this.btnDoDown.Click += new System.EventHandler(this.butDoDown_Click);
             // 
             // label2
             // 
@@ -180,6 +180,7 @@
             this.lblTop.TabIndex = 13;
             this.lblTop.Text = "Hover Me!";
             this.lblTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTop.MouseLeave += new System.EventHandler(this.lblTop_MouseLeave);
             this.lblTop.MouseEnter += new System.EventHandler(this.lblTop_MouseEnter);
             // 
             // lblUnder
@@ -249,7 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 508);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnDoDown);
             this.Controls.Add(this.transparentPanel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.transparentLabel1);
@@ -259,9 +260,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pnlMoveTarget);
+            this.Controls.Add(this.butMoveStop);
+            this.Controls.Add(this.butDoup);
             this.Controls.Add(this.lblTop);
             this.Controls.Add(this.lblUnder);
             this.Name = "Form1";
@@ -276,9 +277,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button butDoup;
+        private System.Windows.Forms.Button butMoveStop;
+        private System.Windows.Forms.Panel pnlMoveTarget;
         private System.Windows.Forms.TextBox textBox1;
         private TransparentLabel transparentLabel1;
         private System.Windows.Forms.Panel panel2;
@@ -292,7 +293,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDoDown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTop;
         private System.Windows.Forms.Label lblUnder;

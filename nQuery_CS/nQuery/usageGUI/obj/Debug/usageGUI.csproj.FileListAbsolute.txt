@@ -58,3 +58,13 @@ C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery_CS\nQuery\usageGUI\obj\De
 C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.Form1.resources
 C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.Properties.Resources.resources
 C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery_CS\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.csproj.GenerateResource.Cache
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.exe
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.pdb
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\bin\Debug\usageGUI.exe
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\bin\Debug\usageGUI.pdb
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\bin\Debug\nQuery.dll
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\bin\Debug\nQuery.pdb
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.Form1.resources
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.Properties.Resources.resources
+C:\Users\品田 章伸\Dropbox\Dev\Cs\nQuery\nQuery_CS\nQuery\usageGUI\obj\Debug\usageGUI.csproj.GenerateResource.Cache
