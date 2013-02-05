@@ -43,6 +43,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblTop = new System.Windows.Forms.Label();
             this.lblUnder = new System.Windows.Forms.Label();
+            this.btnScaleUp = new System.Windows.Forms.Button();
+            this.pnlSizeTarget = new System.Windows.Forms.Panel();
+            this.btnScaleDown = new System.Windows.Forms.Button();
             this.transparentPanel1 = new usageGUI.TransparentPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -197,6 +200,34 @@
             this.lblUnder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblUnder.MouseLeave += new System.EventHandler(this.lblUnder_MouseLeave);
             // 
+            // btnScaleUp
+            // 
+            this.btnScaleUp.Location = new System.Drawing.Point(12, 273);
+            this.btnScaleUp.Name = "btnScaleUp";
+            this.btnScaleUp.Size = new System.Drawing.Size(75, 37);
+            this.btnScaleUp.TabIndex = 15;
+            this.btnScaleUp.Text = "ScaleUp";
+            this.btnScaleUp.UseVisualStyleBackColor = true;
+            this.btnScaleUp.Click += new System.EventHandler(this.btnScaleUp_Click);
+            // 
+            // pnlSizeTarget
+            // 
+            this.pnlSizeTarget.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlSizeTarget.Location = new System.Drawing.Point(104, 273);
+            this.pnlSizeTarget.Name = "pnlSizeTarget";
+            this.pnlSizeTarget.Size = new System.Drawing.Size(36, 37);
+            this.pnlSizeTarget.TabIndex = 3;
+            // 
+            // btnScaleDown
+            // 
+            this.btnScaleDown.Location = new System.Drawing.Point(12, 330);
+            this.btnScaleDown.Name = "btnScaleDown";
+            this.btnScaleDown.Size = new System.Drawing.Size(75, 37);
+            this.btnScaleDown.TabIndex = 16;
+            this.btnScaleDown.Text = "ScaleDown";
+            this.btnScaleDown.UseVisualStyleBackColor = true;
+            this.btnScaleDown.Click += new System.EventHandler(this.btnScaleDown_Click);
+            // 
             // transparentPanel1
             // 
             this.transparentPanel1.AllowTransparency = true;
@@ -249,6 +280,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 508);
+            this.Controls.Add(this.btnScaleDown);
+            this.Controls.Add(this.pnlSizeTarget);
+            this.Controls.Add(this.btnScaleUp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDoDown);
             this.Controls.Add(this.transparentPanel1);
@@ -297,6 +331,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTop;
         private System.Windows.Forms.Label lblUnder;
+        private System.Windows.Forms.Button btnScaleUp;
+        private System.Windows.Forms.Panel pnlSizeTarget;
+        private System.Windows.Forms.Button btnScaleDown;
     }
 }
 

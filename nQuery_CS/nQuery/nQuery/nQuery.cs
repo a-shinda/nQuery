@@ -32,6 +32,7 @@ namespace nQueryLib
             {
                 nQueryCore ret = new nQueryCore(ctrl);
                 ret.OriginalPos = ctrl.Location;
+                ret.OriginalSize = ctrl.Size;
                 _dicCtrl.Add(ctrl, ret);
                 return ret;
             }
@@ -106,11 +107,28 @@ namespace nQueryLib.Core
             }
         }
 
+        private Size _OriginalSize = new Size(0, 0);
+        /// <summary>
+        /// 動作開始時のサイズ
+        /// </summary>
+        public Size OriginalSize
+        {
+            get
+            {
+                return _OriginalSize;
+            }
+            set
+            {
+                _OriginalSize = value;
+            }
+        }
+
         private Control _targetCtrl = null;
         private Form _parentForm = null;
         private System.Threading.Timer _moveTimer = null;
         private System.Threading.Timer _sizeTimer = null;
-        Point endPos = new Point(0,0);
+        Point _endPos = new Point(0, 0);
+        Size _endSize = new Size(0, 0);
 
         /// <summary>
         /// アニメーションの停止処理
@@ -178,7 +196,7 @@ namespace nQueryLib.Core
             }
 
             // ここまで移動したら終了
-            endPos = new Point(x, y);
+            _endPos = new Point(x, y);
             x = x - _targetCtrl.Location.X;
             y = y - _targetCtrl.Location.Y;
 
@@ -360,39 +378,39 @@ namespace nQueryLib.Core
                     if (moveXdbl > 0)
                     {
                         // +方向の動作
-                        if (endPos.X <= this._targetCtrl.Location.X)
+                        if (_endPos.X <= this._targetCtrl.Location.X)
                         {
-                            if (endPos.X < this._targetCtrl.Location.X)
-                                this._targetCtrl.Location = new Point( endPos.X, this._targetCtrl.Location.Y);
+                            if (_endPos.X < this._targetCtrl.Location.X)
+                                this._targetCtrl.Location = new Point( _endPos.X, this._targetCtrl.Location.Y);
                             xEndFlg = true;
                         }
                     }
                     else
                     { 
                         // -方向の動作
-                        if (endPos.X >= this._targetCtrl.Location.X)
+                        if (_endPos.X >= this._targetCtrl.Location.X)
                         {
-                            if (endPos.X > this._targetCtrl.Location.X)
-                                this._targetCtrl.Location = new Point(endPos.X, this._targetCtrl.Location.Y);
+                            if (_endPos.X > this._targetCtrl.Location.X)
+                                this._targetCtrl.Location = new Point(_endPos.X, this._targetCtrl.Location.Y);
                             xEndFlg = true;
                         }
                     }
 
                     if (moveYdbl > 0)
                     {
-                        if (endPos.Y <= this._targetCtrl.Location.Y)
+                        if (_endPos.Y <= this._targetCtrl.Location.Y)
                         {
-                            if (endPos.Y < this._targetCtrl.Location.Y)
-                                this._targetCtrl.Location = new Point(this._targetCtrl.Location.X, endPos.Y);
+                            if (_endPos.Y < this._targetCtrl.Location.Y)
+                                this._targetCtrl.Location = new Point(this._targetCtrl.Location.X, _endPos.Y);
                             yEndFlg = true;
                         }
                     }
                     else
                     {
-                        if (endPos.Y >= this._targetCtrl.Location.Y)
+                        if (_endPos.Y >= this._targetCtrl.Location.Y)
                         {
-                            if (endPos.Y > this._targetCtrl.Location.Y)
-                                this._targetCtrl.Location = new Point(this._targetCtrl.Location.X, endPos.Y);
+                            if (_endPos.Y > this._targetCtrl.Location.Y)
+                                this._targetCtrl.Location = new Point(this._targetCtrl.Location.X, _endPos.Y);
                             yEndFlg = true;
                         }
                     }
@@ -413,9 +431,45 @@ namespace nQueryLib.Core
             }, null, 0, 10); // 0.01秒サイクルで動作する
         }
 
+        /// <summary>
+        /// コントロールの拡大/縮小を行う
+        /// </summary>
+        /// <param name="width">拡大/縮小終了後の幅</param>
+        /// <param name="height">拡大/縮小終了後の高さ</param>
+        /// <param name="speed">動作完了までにかける秒数(m/s)</param>
+        public nQueryCore Size(int width, int height, int speed)
+        {
+            try
+            {
+                DoSize(width, height, speed, null);
+            }
+            catch (Exception ex)
+            { }
+
+            return this;
+        }
 
         /// <summary>
-        /// 
+        /// コントロールの拡大/縮小を行う
+        /// </summary>
+        /// <param name="width">拡大/縮小終了後の幅</param>
+        /// <param name="height">拡大/縮小終了後の高さ</param>
+        /// <param name="speed">動作完了までにかける秒数(m/s)</param>
+        /// <param name="callback">拡大/縮小完了後に実行されるデリゲード</param>
+        public nQueryCore Size(int width, int height, int speed, Action callBack)
+        {
+            try
+            {
+                DoSize(width, height, speed, callBack);
+            }
+            catch (Exception ex)
+            { }
+
+            return this;
+        }
+
+        /// <summary>
+        /// 拡大/縮小実処理
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
@@ -423,7 +477,247 @@ namespace nQueryLib.Core
         /// <param name="callBack"></param>
         private void DoSize(int width, int height, int speed, Action callBack)
         { 
-        
+            // 同じ位置から移動処理が行われた場合
+            if (_targetCtrl.Size.Width == width && _targetCtrl.Size.Height == height)
+            {
+                if (callBack != null)
+                    callBack();
+            }
+
+            // ここまで移動したら終了
+            _endSize = new Size(width, height);
+            width = width - _targetCtrl.Size.Width;
+            height = height - _targetCtrl.Size.Height;
+
+            // 0.01秒毎の移動距離を算出
+            double sizeXdbl = (width * 0.01) / (speed * 0.001);
+            double sizeYdbl = (height * 0.01) / (speed * 0.001);
+            int sizeXInt = Math.Abs(sizeXdbl) < 1 ? 1 : int.Parse(Math.Ceiling(Math.Abs(sizeXdbl)).ToString());
+            int sizeYInt = Math.Abs(sizeYdbl) < 1 ? 1 : int.Parse(Math.Ceiling(Math.Abs(sizeYdbl)).ToString());
+
+            if (width < 0)
+                sizeXInt = 0 - sizeXInt;
+            if (height < 0)
+                sizeYInt = 0 - sizeYInt;
+
+            bool widthEndFlg = false;
+            bool heightEndFlg = false;
+
+            Size movingSize = new Size(_targetCtrl.Size.Width, _targetCtrl.Size.Height);
+
+            // 1サイクルの拡張/縮小が1を下回る場合に使う変数群(WindowsFormのSizeは整数値のみを設定可能なため)
+            double leaveWidthSum = 0;
+            double leaveHeightSum = 0;
+            double leaveWidth = 0;
+            double leaveHeight = 0;
+            bool canWidthadd = true;
+            bool canHeightadd = true;
+            double sizeWidthSum = 0;
+            double sizeHeightSum = 0;
+            int addValWidth = 0;
+            int addValHeight = 0;
+
+            // ThreadTimerを使用してバックグラウンドで処理を行う
+            _sizeTimer = new System.Threading.Timer(state =>
+            {
+                #region 拡張/縮小値の計算
+
+                sizeWidthSum += sizeXdbl;
+                sizeHeightSum += sizeYdbl;
+
+                if (Math.Abs(sizeWidthSum) < 1)
+                {
+                    // 拡張/縮小値が1ポイント以下
+                    canWidthadd = false;
+                }
+                else 
+                {
+                    // 拡張/縮小値キャッシュをクリア
+                    sizeWidthSum = 0;
+                    canWidthadd = true;
+                }
+
+                // 端数を算出する
+                if (Util.HasLeaves(sizeWidthSum, out leaveWidth))
+                {
+                    // キャッシュ
+                    leaveWidthSum += Math.Abs(leaveWidth);
+                    if (Math.Abs(leaveWidthSum) > 1)
+                    {
+                        if (sizeXdbl > 0)
+                        {
+                            addValWidth = sizeXInt + 1;
+                        }
+                        else
+                        {
+                            addValWidth = sizeXInt - 1;
+                        }
+                        leaveWidthSum -= 1;
+
+
+                        // 1サイクルの拡張/縮小値が0point以下でも端数が1pointを上回る場合は処理を行う
+                        if (!canWidthadd)
+                        {
+                            canWidthadd = true;
+                            if (sizeXdbl > 0)
+                            {
+                                addValWidth = 1;
+                            }
+                            else
+                            {
+                                addValWidth = - 1;
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        addValWidth = sizeXInt;
+                    }
+                }
+                else
+                {
+                    // 端数無し
+                    addValWidth = sizeXInt;
+                }
+
+                if (Math.Abs(sizeHeightSum) < 1)
+                {
+                    // 拡張/縮小値が1ポイント以下
+                    canHeightadd = false;
+                }
+                else
+                {
+                    // 拡張/縮小値キャッシュをクリア
+                    sizeHeightSum = 0;
+                    canHeightadd = true;
+                }
+
+                // 端数を算出する
+                if (Util.HasLeaves(sizeHeightSum, out leaveHeight))
+                {
+                    // キャッシュ
+                    leaveHeightSum += Math.Abs(leaveHeight);
+                    if (Math.Abs(leaveHeightSum) > 1)
+                    {
+                        if (sizeYdbl > 0)
+                        {
+                            addValHeight = sizeYInt + 1;
+                        }
+                        else
+                        {
+                            addValHeight = sizeYInt - 1;
+                        }
+                        leaveHeightSum -= 1;
+
+
+                        // 1サイクルの拡張/縮小値が0point以下でも端数が1pointを上回る場合は処理を行う
+                        if (!canHeightadd)
+                        {
+                            canHeightadd = true;
+                            if (sizeYdbl > 0)
+                            {
+                                addValHeight = 1;
+                            }
+                            else
+                            {
+                                addValHeight = -1;
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        addValHeight = sizeYInt;
+                    }
+                }
+                else
+                {
+                    // 端数無し
+                    addValHeight = sizeYInt;
+                }
+
+                if (!canWidthadd && !canHeightadd)
+                {
+                    return;
+                }
+
+                #endregion
+
+                // UIスレッドで動作させる
+                _parentForm.BeginInvoke((Action)(() =>
+                {
+                    #region 移動本処理
+
+                    // 処理が終わっていないかつ、移動可能フラグがたっていればポイントを＋していく
+                    if (!widthEndFlg && canWidthadd)
+                    {
+                        movingSize = new Size(movingSize.Width + addValWidth, movingSize.Height);
+                    }
+
+                    if (!heightEndFlg && canHeightadd)
+                    {
+                        movingSize = new Size(movingSize.Width, movingSize.Height + addValHeight);
+                    }
+
+                    // 移動
+                    _targetCtrl.Size = movingSize;
+
+                    // 終了条件判定
+                    if (sizeXdbl > 0)
+                    {
+                        // +方向の動作
+                        if (_endSize.Width <= this._targetCtrl.Size.Width)
+                        {
+                            if (_endSize.Width < this._targetCtrl.Size.Width)
+                                this._targetCtrl.Size = new Size(_endSize.Width, this._targetCtrl.Size.Height);
+                            widthEndFlg = true;
+                        }
+                    }
+                    else
+                    { 
+                        // -方向の動作
+                        if (_endSize.Width >= this._targetCtrl.Size.Width)
+                        {
+                            if (_endSize.Width > this._targetCtrl.Size.Width)
+                                this._targetCtrl.Size = new Size(_endSize.Width, this._targetCtrl.Size.Height);
+                            widthEndFlg = true;
+                        }
+                    }
+
+                    if (sizeYdbl > 0)
+                    {
+                        if (_endSize.Height <= this._targetCtrl.Size.Height)
+                        {
+                            if (_endSize.Height < this._targetCtrl.Size.Height)
+                                this._targetCtrl.Size = new Size(this._targetCtrl.Size.Width, _endSize.Height);
+                            heightEndFlg = true;
+                        }
+                    }
+                    else
+                    {
+                        if (_endSize.Height >= this._targetCtrl.Size.Height)
+                        {
+                            if (_endSize.Height > this._targetCtrl.Size.Height)
+                                this._targetCtrl.Size = new Size(this._targetCtrl.Size.Width, _endSize.Height);
+                            heightEndFlg = true;
+                        }
+                    }
+
+                    // 終了条件を満たしている場合
+                    if (widthEndFlg && heightEndFlg)
+                    {
+                        _sizeTimer.Dispose();
+
+                        // CallBackが渡されている場合は実行
+                        if (callBack != null)
+                            callBack();
+                    }
+
+                    #endregion
+                }));
+
+            }, null, 0, 10); // 0.01秒サイクルで動作する
         }
 
         /// <summary>

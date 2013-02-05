@@ -143,6 +143,46 @@ namespace usageGUI
             { }
         }
 
+        private void btnScaleUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 動作中の色を変える
+                pnlSizeTarget.BackColor = ColorTranslator.FromHtml("#FFD464");
+                nQuery.Select(pnlSizeTarget).Stop().Size(200, 200, 1000, new Action(() =>
+                {
+                    // 動作完了後色を戻す
+                    pnlSizeTarget.BackColor = ColorTranslator.FromHtml("#555555");
+
+                }));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnScaleDown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 動作中の色を変える
+                pnlSizeTarget.BackColor = ColorTranslator.FromHtml("#FFD464");
+                nQuery.Select(pnlSizeTarget).Stop().Size(nQuery.Select(pnlSizeTarget).OriginalSize.Width, 
+                                                         nQuery.Select(pnlSizeTarget).OriginalSize.Height, 
+                                                         1000, new Action(() =>
+                {
+                    // 動作完了後色を戻す
+                    pnlSizeTarget.BackColor = ColorTranslator.FromHtml("#555555");
+
+                }));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             transparentLabel1.BackColor = Color.FromArgb(int.Parse(textBox2.Text), int.Parse(textBox3.Text), int.Parse(textBox4.Text), int.Parse(textBox5.Text));
