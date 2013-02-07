@@ -16,8 +16,6 @@ namespace usageGUI
         public frmMain()
         {
             InitializeComponent();
-
-            transparentLabel1.BackColor =  Color.FromArgb(220, 255, 255, 255); // 半透明
         }
 
         /// <summary>
@@ -97,39 +95,38 @@ namespace usageGUI
         }
 
         /// <summary>
-        /// lblTopにマウスポインタが侵入
+        /// lblMoveEnにマウスポインタが侵入
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lblTop_MouseEnter(object sender, EventArgs e)
+        private void lblMoveEn_MouseEnter(object sender, EventArgs e)
         {
             try
             {
-                // ラベルを下方に移動
-                nQuery.Select(lblUnder).Stop().Move(lblTop.Location.X, lblTop.Location.Y + lblTop.Height, 200);
+                // サブラベルを下方に移動
+                nQuery.Select(lblMoveJa).Stop().Move(lblMoveEn.Location.X, lblMoveEn.Location.Y + lblMoveEn.Height, 200);
 
                 // パネルを右に移動しながらサイズを変更する
-                nQuery.Select(pnlInCtrl).Stop().Move(lblTop.Location.X + lblTop.Size.Width, lblTop.Location.Y, 100)
-                                               .Size(lblTop.Size.Width, lblTop.Size.Height * 2, 200);
+                nQuery.Select(pnlMoveSample).Stop().Move(lblMoveEn.Location.X + lblMoveEn.Size.Width, lblMoveEn.Location.Y, 100)
+                                               .Size(541, 484, 200);
             }
             catch (Exception ex)
             { }
         }
 
         /// <summary>
-        /// lblTopからマウスポインタが離脱
+        /// lblMoveEnからマウスポインタが離脱
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lblTop_MouseLeave(object sender, EventArgs e)
+        private void lblMoveEn_MouseLeave(object sender, EventArgs e)
         {
             try
             {
                 // lblUnderまたはpnlInCtrlにマウスが当たっている場合は処理を行わない
-                if (!nQuery.Select(lblUnder).IsMouseUnder && !nQuery.Select(pnlInCtrl).IsMouseUnder)
+                if (!nQuery.Select(lblMoveJa).IsMouseUnder && !nQuery.Select(pnlMoveSample).IsMouseUnder)
                 {
-                    nQuery.Select(lblUnder).Stop().Move(lblTop.Location.X, lblTop.Location.Y, 500);
-                    nQuery.Select(pnlInCtrl).Stop().Move(lblTop.Location.X, lblTop.Location.Y, 500).Size(lblTop.Size.Width, lblTop.Size.Height,200);
+                    CloseMoveSample();
                 }
             }
             catch (Exception ex)
@@ -137,43 +134,58 @@ namespace usageGUI
         }
 
         /// <summary>
-        /// lblUnderからマウスポインタが離脱
+        /// lblMoveJaからマウスポインタが離脱
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lblUnder_MouseLeave(object sender, EventArgs e)
+        private void lblMoveJa_MouseLeave(object sender, EventArgs e)
         {
             try
             {
-                // pnlInCtrlにフォーカスがあたっていない場合
-                if (!nQuery.Select(pnlInCtrl).IsMouseUnder)
+                // pnlMoveSampleにフォーカスがあたっていない場合
+                if (!nQuery.Select(pnlMoveSample).IsMouseUnder)
                 {
-                    // 元のポジションまで戻す
-                    nQuery.Select(lblUnder).Stop().Move(lblTop.Location.X, lblTop.Location.Y, 500);
-                    nQuery.Select(pnlInCtrl).Stop().Move(lblTop.Location.X, lblTop.Location.Y, 500).Size(lblTop.Size.Width, lblTop.Size.Height, 200);
+                    CloseMoveSample();
                 }
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>
-        /// pnlInCtrlからマウスポインタが離脱
+        /// pnlMoveSampleからマウスポインタが離脱
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pnlInCtrl_MouseLeave(object sender, EventArgs e)
+        private void pnlMoveSample_MouseLeave(object sender, EventArgs e)
         {
-            // lblUnderにフォーカスがあたっていない場合
-            // また、コントロールが内包するコントロールにMouseEnterが発生すると
-            // MouseLeaveが発生するので
-            // pnlInCtrlがマウス座標下にいないことも条件に含める
-            if (!nQuery.Select(lblUnder).IsMouseUnder && !nQuery.Select(pnlInCtrl).IsMouseUnder)
+            try
             {
-                // 元のポジションまで戻す
-                nQuery.Select(lblUnder).Stop().Move(lblTop.Location.X, lblTop.Location.Y, 500);
-                nQuery.Select(pnlInCtrl).Stop().Move(lblTop.Location.X, lblTop.Location.Y, 500).Size(lblTop.Size.Width, lblTop.Size.Height, 200);
+                // lblMoveJaにフォーカスがあたっていない場合
+                // また、コントロールが内包するコントロールにMouseEnterが発生すると
+                // MouseLeaveが発生するので
+                // pnlMoveSampleがマウス座標下にいないことも条件に含める
+                if (!nQuery.Select(lblMoveJa).IsMouseUnder && !nQuery.Select(pnlMoveSample).IsMouseUnder)
+                {
+                    CloseMoveSample();
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CloseMoveSample()
+        {
+            // 元のポジションまで戻す
+            nQuery.Select(lblMoveJa).Stop().Move(lblMoveEn.Location.X, lblMoveEn.Location.Y, 200);
+            nQuery.Select(pnlMoveSample).Stop().Move(lblMoveEn.Location.X, lblMoveEn.Location.Y, 300)
+                                           .Size(lblMoveEn.Size.Width, lblMoveEn.Size.Height, 200);
+
         }
 
         /// <summary>
@@ -226,13 +238,6 @@ namespace usageGUI
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            transparentLabel1.BackColor = Color.FromArgb(int.Parse(textBox2.Text), int.Parse(textBox3.Text), int.Parse(textBox4.Text), int.Parse(textBox5.Text));
-            transparentPanel1.BackColor = Color.FromArgb(int.Parse(textBox2.Text), int.Parse(textBox3.Text), int.Parse(textBox4.Text), int.Parse(textBox5.Text));
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -269,5 +274,83 @@ namespace usageGUI
             }
         }
 
+
+        private void lblSizeSample_MouseEnter(object sender, EventArgs e)
+        {
+            try
+            {
+                // サブラベルを下方に移動
+                nQuery.Select(lblSizeJa).Stop().Move(lblSizeEn.Location.X, lblSizeEn.Location.Y + lblSizeEn.Height, 200);
+
+                // パネルを右に移動しながらサイズを変更する
+                nQuery.Select(pnlSizeSample).Stop().Move(lblSizeEn.Location.X + lblSizeEn.Size.Width, lblMoveEn.Location.Y, 100)
+                                                   .Size(541, 484, 200);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lblSizeEn_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!nQuery.Select(lblSizeJa).IsMouseUnder && !nQuery.Select(pnlSizeSample).IsMouseUnder)
+                {
+                    CloseSizeSample();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lblSizeJa_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                // pnlSizeSampleにフォーカスがあたっていない場合
+                if (!nQuery.Select(pnlSizeSample).IsMouseUnder)
+                {
+                    CloseSizeSample();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pnlSizeSample_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                // lblSizeJaにフォーカスがあたっていない場合
+                // また、コントロールが内包するコントロールにMouseEnterが発生すると
+                // MouseLeaveが発生するので
+                // pnlSizeSampleがマウス座標下にいないことも条件に含める
+                if (!nQuery.Select(lblSizeJa).IsMouseUnder && !nQuery.Select(pnlSizeSample).IsMouseUnder)
+                {
+                    CloseSizeSample();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CloseSizeSample()
+        {
+            // 元のポジションまで戻す
+            nQuery.Select(lblSizeJa).Stop().Move(lblSizeEn.Location.X, lblSizeEn.Location.Y, 200);
+            nQuery.Select(pnlSizeSample).Stop().Move(lblSizeEn.Location.X, lblSizeEn.Location.Y, 300)
+                                           .Size(lblSizeEn.Size.Width, lblSizeEn.Size.Height, 200);
+
+        }
     }
 }

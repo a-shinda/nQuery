@@ -35,9 +35,10 @@
             // 
             // lblQuery
             // 
+            this.lblQuery.BackColor = System.Drawing.Color.Transparent;
             this.lblQuery.Font = new System.Drawing.Font("Trebuchet MS", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblQuery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblQuery.Location = new System.Drawing.Point(205, 100);
+            this.lblQuery.ForeColor = System.Drawing.Color.Silver;
+            this.lblQuery.Location = new System.Drawing.Point(274, 100);
             this.lblQuery.Name = "lblQuery";
             this.lblQuery.Size = new System.Drawing.Size(244, 55);
             this.lblQuery.TabIndex = 1;
@@ -57,10 +58,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(305, 159);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(374, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 12);
+            this.label1.Size = new System.Drawing.Size(154, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Change Boring to Fun";
             // 
@@ -68,7 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(100, 250);
             this.Controls.Add(this.lblN);
             this.Controls.Add(this.lblQuery);

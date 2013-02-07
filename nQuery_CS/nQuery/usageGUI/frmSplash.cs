@@ -22,9 +22,9 @@ namespace usageGUI
             try
             {
                 // Demoアクションを行う
-                nQuery.Select(this).Size(500, 250, 500, new Action(() =>
+                nQuery.Select(this).Size(550, 250, 500, new Action(() =>
                 {
-                    nQuery.Select(lblN).Move(178, lblQuery.Location.Y, 2000, new Action(() =>
+                    nQuery.Select(lblN).Move(248, lblQuery.Location.Y, 2000, new Action(() =>
                     {
                         lblN.ForeColor = ColorTranslator.FromHtml("#FF007E");
                         lblN.Update();
@@ -33,7 +33,7 @@ namespace usageGUI
 
                     }));
 
-                })).Move(this.Location.X - 200, this.Location.Y, 500);
+                })).Move(this.Location.X - 225, this.Location.Y, 500);
             }
             catch (Exception ex)
             {
