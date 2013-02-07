@@ -49,17 +49,18 @@
   <ItemGroup>
     <Compile Include="nQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\TransparentLabel.cs">
+    <Compile Include="UI\IOpacity.cs" />
+    <Compile Include="UI\nQueryOpacityPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\TransparentLabel.Designer.cs">
-      <DependentUpon>TransparentLabel.cs</DependentUpon>
+    <Compile Include="UI\nQueryOpacityPanel.Designer.cs">
+      <DependentUpon>nQueryOpacityPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\TransparentPanel.cs">
+    <Compile Include="UI\nQueryOpacityLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\TransparentPanel.Designer.cs">
-      <DependentUpon>TransparentPanel.cs</DependentUpon>
+    <Compile Include="UI\nQueryOpacityLabel.Designer.cs">
+      <DependentUpon>nQueryOpacityLabel.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
