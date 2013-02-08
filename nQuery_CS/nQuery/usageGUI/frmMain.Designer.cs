@@ -55,12 +55,10 @@
             this.txtOpaSpeed = new System.Windows.Forms.TextBox();
             this.lblSizeEn = new System.Windows.Forms.Label();
             this.lblSizeJa = new System.Windows.Forms.Label();
-            this.pnlSizeSample = new System.Windows.Forms.Panel();
             this.pnlOpaTarget = new nQueryLib.UI.nQueryOpacityPanel();
             this.lblFadeEn = new System.Windows.Forms.Label();
             this.lblWhatEn = new System.Windows.Forms.Label();
             this.lblFadeJa = new System.Windows.Forms.Label();
-            this.pnlFadeSample = new System.Windows.Forms.Panel();
             this.lblQuery = new nQueryLib.UI.nQueryOpacityLabel();
             this.lblWhatJa = new System.Windows.Forms.Label();
             this.pnlWhat = new System.Windows.Forms.Panel();
@@ -79,12 +77,31 @@
             this.nQueryOpacityLabel6 = new nQueryLib.UI.nQueryOpacityLabel();
             this.nQueryOpacityLabel3 = new nQueryLib.UI.nQueryOpacityLabel();
             this.nQueryOpacityLabel4 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.pnlSizeSample = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.nQueryOpacityLabel19 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.nQueryOpacityLabel20 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.nQueryOpacityLabel21 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.nQueryOpacityLabel22 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.pnlFadeSample = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.nQueryOpacityLabel23 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.nQueryOpacityLabel24 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.nQueryOpacityLabel25 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.nQueryOpacityLabel26 = new nQueryLib.UI.nQueryOpacityLabel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nQueryOpacityLabel27 = new nQueryLib.UI.nQueryOpacityLabel();
             this.pnlMoveSample.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlSizeSample.SuspendLayout();
-            this.pnlFadeSample.SuspendLayout();
             this.pnlWhat.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnlSizeSample.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.pnlFadeSample.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // butDoup
@@ -171,29 +188,29 @@
             // 
             // btnScaleUp
             // 
-            this.btnScaleUp.Location = new System.Drawing.Point(22, 19);
+            this.btnScaleUp.Location = new System.Drawing.Point(14, 98);
             this.btnScaleUp.Name = "btnScaleUp";
             this.btnScaleUp.Size = new System.Drawing.Size(75, 37);
             this.btnScaleUp.TabIndex = 15;
-            this.btnScaleUp.Text = "ScaleUp";
+            this.btnScaleUp.Text = "拡大";
             this.btnScaleUp.UseVisualStyleBackColor = true;
             this.btnScaleUp.Click += new System.EventHandler(this.btnScaleUp_Click);
             // 
             // pnlSizeTarget
             // 
             this.pnlSizeTarget.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlSizeTarget.Location = new System.Drawing.Point(114, 19);
+            this.pnlSizeTarget.Location = new System.Drawing.Point(106, 98);
             this.pnlSizeTarget.Name = "pnlSizeTarget";
             this.pnlSizeTarget.Size = new System.Drawing.Size(36, 37);
             this.pnlSizeTarget.TabIndex = 3;
             // 
             // btnScaleDown
             // 
-            this.btnScaleDown.Location = new System.Drawing.Point(22, 75);
+            this.btnScaleDown.Location = new System.Drawing.Point(14, 138);
             this.btnScaleDown.Name = "btnScaleDown";
             this.btnScaleDown.Size = new System.Drawing.Size(75, 37);
             this.btnScaleDown.TabIndex = 16;
-            this.btnScaleDown.Text = "ScaleDown";
+            this.btnScaleDown.Text = "縮小";
             this.btnScaleDown.UseVisualStyleBackColor = true;
             this.btnScaleDown.Click += new System.EventHandler(this.btnScaleDown_Click);
             // 
@@ -318,34 +335,34 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(70, 230);
+            this.button2.Location = new System.Drawing.Point(65, 165);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 26);
+            this.button2.Size = new System.Drawing.Size(51, 26);
             this.button2.TabIndex = 18;
-            this.button2.Text = "Change";
+            this.button2.Text = "Fade";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(77, 85);
+            this.label3.Location = new System.Drawing.Point(219, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 93);
+            this.label3.Size = new System.Drawing.Size(175, 112);
             this.label3.TabIndex = 19;
-            this.label3.Text = "This text is background";
+            this.label3.Text = "This text \r\nis \r\nbackground";
             // 
             // txtOpacity
             // 
-            this.txtOpacity.Location = new System.Drawing.Point(41, 203);
+            this.txtOpacity.Location = new System.Drawing.Point(102, 106);
             this.txtOpacity.Name = "txtOpacity";
             this.txtOpacity.Size = new System.Drawing.Size(53, 21);
             this.txtOpacity.TabIndex = 20;
-            this.txtOpacity.Text = "100";
+            this.txtOpacity.Text = "50";
             // 
             // txtOpaSpeed
             // 
-            this.txtOpaSpeed.Location = new System.Drawing.Point(129, 203);
+            this.txtOpaSpeed.Location = new System.Drawing.Point(102, 133);
             this.txtOpaSpeed.Name = "txtOpaSpeed";
             this.txtOpaSpeed.Size = new System.Drawing.Size(53, 21);
             this.txtOpaSpeed.TabIndex = 21;
@@ -377,23 +394,12 @@
             this.lblSizeJa.Text = "Sizeの使い方の説明です";
             this.lblSizeJa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlSizeSample
-            // 
-            this.pnlSizeSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
-            this.pnlSizeSample.Controls.Add(this.btnScaleUp);
-            this.pnlSizeSample.Controls.Add(this.pnlSizeTarget);
-            this.pnlSizeSample.Controls.Add(this.btnScaleDown);
-            this.pnlSizeSample.Location = new System.Drawing.Point(388, 5);
-            this.pnlSizeSample.Name = "pnlSizeSample";
-            this.pnlSizeSample.Size = new System.Drawing.Size(188, 74);
-            this.pnlSizeSample.TabIndex = 24;
-            // 
             // pnlOpaTarget
             // 
-            this.pnlOpaTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(92)))), ((int)(((byte)(91)))));
-            this.pnlOpaTarget.Location = new System.Drawing.Point(70, 47);
+            this.pnlOpaTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(198)))), ((int)(((byte)(63)))));
+            this.pnlOpaTarget.Location = new System.Drawing.Point(210, 89);
             this.pnlOpaTarget.Name = "pnlOpaTarget";
-            this.pnlOpaTarget.Size = new System.Drawing.Size(165, 151);
+            this.pnlOpaTarget.Size = new System.Drawing.Size(192, 151);
             this.pnlOpaTarget.TabIndex = 5;
             this.pnlOpaTarget.Text = "nQueryOpacityPanel1";
             // 
@@ -406,7 +412,7 @@
             this.lblFadeEn.Name = "lblFadeEn";
             this.lblFadeEn.Size = new System.Drawing.Size(188, 74);
             this.lblFadeEn.TabIndex = 25;
-            this.lblFadeEn.Text = "Fade Sample";
+            this.lblFadeEn.Text = "FadeTo Sample";
             this.lblFadeEn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFadeEn.MouseEnter += new System.EventHandler(this.lblTop_MouseEnter);
             // 
@@ -432,23 +438,8 @@
             this.lblFadeJa.Name = "lblFadeJa";
             this.lblFadeJa.Size = new System.Drawing.Size(188, 40);
             this.lblFadeJa.TabIndex = 27;
-            this.lblFadeJa.Text = "Sizeの使い方の説明です";
+            this.lblFadeJa.Text = "FadeToの使い方の説明です";
             this.lblFadeJa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlFadeSample
-            // 
-            this.pnlFadeSample.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFadeSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(221)))));
-            this.pnlFadeSample.Controls.Add(this.pnlOpaTarget);
-            this.pnlFadeSample.Controls.Add(this.button2);
-            this.pnlFadeSample.Controls.Add(this.label3);
-            this.pnlFadeSample.Controls.Add(this.txtOpaSpeed);
-            this.pnlFadeSample.Controls.Add(this.txtOpacity);
-            this.pnlFadeSample.Location = new System.Drawing.Point(576, 5);
-            this.pnlFadeSample.Name = "pnlFadeSample";
-            this.pnlFadeSample.Size = new System.Drawing.Size(188, 74);
-            this.pnlFadeSample.TabIndex = 25;
             // 
             // lblQuery
             // 
@@ -664,25 +655,225 @@
             this.nQueryOpacityLabel4.TabIndex = 29;
             this.nQueryOpacityLabel4.Text = "nQueryとは";
             // 
+            // pnlSizeSample
+            // 
+            this.pnlSizeSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlSizeSample.Controls.Add(this.panel4);
+            this.pnlSizeSample.Location = new System.Drawing.Point(393, 12);
+            this.pnlSizeSample.Name = "pnlSizeSample";
+            this.pnlSizeSample.Size = new System.Drawing.Size(177, 62);
+            this.pnlSizeSample.TabIndex = 18;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.AutoScroll = true;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.panel4.Controls.Add(this.btnScaleUp);
+            this.panel4.Controls.Add(this.pnlSizeTarget);
+            this.panel4.Controls.Add(this.btnScaleDown);
+            this.panel4.Controls.Add(this.nQueryOpacityLabel19);
+            this.panel4.Controls.Add(this.nQueryOpacityLabel20);
+            this.panel4.Controls.Add(this.nQueryOpacityLabel21);
+            this.panel4.Controls.Add(this.nQueryOpacityLabel22);
+            this.panel4.Location = new System.Drawing.Point(9, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(159, 43);
+            this.panel4.TabIndex = 13;
+            // 
+            // nQueryOpacityLabel19
+            // 
+            this.nQueryOpacityLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel19.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel19.Location = new System.Drawing.Point(11, 262);
+            this.nQueryOpacityLabel19.Name = "nQueryOpacityLabel19";
+            this.nQueryOpacityLabel19.Size = new System.Drawing.Size(695, 106);
+            this.nQueryOpacityLabel19.TabIndex = 32;
+            this.nQueryOpacityLabel19.Text = "のように\r\nnQuery.Select(対象のコントロール).Size(動作終了時の幅, 動作終了時の高さ, 動作スピード(m/s), [option:CallB" +
+                "ack]);\r\nと記述します。\r\n上記の例では、\"TargetControl\"をSize(100, 200)まで、1秒で拡大する\r\nことになります。";
+            // 
+            // nQueryOpacityLabel20
+            // 
+            this.nQueryOpacityLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel20.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel20.Location = new System.Drawing.Point(12, 237);
+            this.nQueryOpacityLabel20.Name = "nQueryOpacityLabel20";
+            this.nQueryOpacityLabel20.Size = new System.Drawing.Size(610, 23);
+            this.nQueryOpacityLabel20.TabIndex = 31;
+            this.nQueryOpacityLabel20.Text = "nQuery.Select(TargetControl).Size(100, 200, 1000);";
+            // 
+            // nQueryOpacityLabel21
+            // 
+            this.nQueryOpacityLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel21.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel21.Location = new System.Drawing.Point(17, 64);
+            this.nQueryOpacityLabel21.Name = "nQueryOpacityLabel21";
+            this.nQueryOpacityLabel21.Size = new System.Drawing.Size(610, 20);
+            this.nQueryOpacityLabel21.TabIndex = 30;
+            this.nQueryOpacityLabel21.Text = "Sizeメソッドを使用すると、コントロールの拡大/縮小が行えます。";
+            // 
+            // nQueryOpacityLabel22
+            // 
+            this.nQueryOpacityLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel22.Font = new System.Drawing.Font("HGS明朝E", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel22.ForeColor = System.Drawing.Color.Silver;
+            this.nQueryOpacityLabel22.Location = new System.Drawing.Point(7, 7);
+            this.nQueryOpacityLabel22.Name = "nQueryOpacityLabel22";
+            this.nQueryOpacityLabel22.Size = new System.Drawing.Size(473, 55);
+            this.nQueryOpacityLabel22.TabIndex = 29;
+            this.nQueryOpacityLabel22.Text = "Sizeの使い方";
+            // 
+            // pnlFadeSample
+            // 
+            this.pnlFadeSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(198)))), ((int)(((byte)(63)))));
+            this.pnlFadeSample.Controls.Add(this.panel5);
+            this.pnlFadeSample.Location = new System.Drawing.Point(583, 12);
+            this.pnlFadeSample.Name = "pnlFadeSample";
+            this.pnlFadeSample.Size = new System.Drawing.Size(177, 61);
+            this.pnlFadeSample.TabIndex = 19;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.AutoScroll = true;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.panel5.Controls.Add(this.nQueryOpacityLabel27);
+            this.panel5.Controls.Add(this.pnlOpaTarget);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.txtOpaSpeed);
+            this.panel5.Controls.Add(this.txtOpacity);
+            this.panel5.Controls.Add(this.nQueryOpacityLabel23);
+            this.panel5.Controls.Add(this.nQueryOpacityLabel24);
+            this.panel5.Controls.Add(this.nQueryOpacityLabel25);
+            this.panel5.Controls.Add(this.nQueryOpacityLabel26);
+            this.panel5.Location = new System.Drawing.Point(9, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(159, 42);
+            this.panel5.TabIndex = 13;
+            // 
+            // nQueryOpacityLabel23
+            // 
+            this.nQueryOpacityLabel23.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel23.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel23.Location = new System.Drawing.Point(11, 284);
+            this.nQueryOpacityLabel23.Name = "nQueryOpacityLabel23";
+            this.nQueryOpacityLabel23.Size = new System.Drawing.Size(695, 106);
+            this.nQueryOpacityLabel23.TabIndex = 32;
+            this.nQueryOpacityLabel23.Text = "のように\r\nnQuery.Select(対象のコントロール).FadeTo(動作終了時の透明度,  動作スピード(m/s), [option:CallBack])" +
+                ";\r\nと記述します。\r\n上記の例では、\"TargetControl\"を1秒で透明度50%にする\r\nことになります。";
+            // 
+            // nQueryOpacityLabel24
+            // 
+            this.nQueryOpacityLabel24.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel24.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel24.Location = new System.Drawing.Point(12, 259);
+            this.nQueryOpacityLabel24.Name = "nQueryOpacityLabel24";
+            this.nQueryOpacityLabel24.Size = new System.Drawing.Size(610, 23);
+            this.nQueryOpacityLabel24.TabIndex = 31;
+            this.nQueryOpacityLabel24.Text = "nQuery.Select(TargetControl).FadeTo(50, 1000);";
+            // 
+            // nQueryOpacityLabel25
+            // 
+            this.nQueryOpacityLabel25.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel25.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel25.Location = new System.Drawing.Point(17, 64);
+            this.nQueryOpacityLabel25.Name = "nQueryOpacityLabel25";
+            this.nQueryOpacityLabel25.Size = new System.Drawing.Size(610, 20);
+            this.nQueryOpacityLabel25.TabIndex = 30;
+            this.nQueryOpacityLabel25.Text = "FadeToメソッドを使用すると、コントロールのFadeIn/FadeOutが行えます。";
+            // 
+            // nQueryOpacityLabel26
+            // 
+            this.nQueryOpacityLabel26.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel26.Font = new System.Drawing.Font("HGS明朝E", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel26.ForeColor = System.Drawing.Color.Silver;
+            this.nQueryOpacityLabel26.Location = new System.Drawing.Point(7, 7);
+            this.nQueryOpacityLabel26.Name = "nQueryOpacityLabel26";
+            this.nQueryOpacityLabel26.Size = new System.Drawing.Size(675, 55);
+            this.nQueryOpacityLabel26.TabIndex = 29;
+            this.nQueryOpacityLabel26.Text = "FadeToの使い方(テスト)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 12);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "透明度(1 - 100)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 136);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 12);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "speed";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(158, 139);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 12);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "(m/s)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(158, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 12);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "(%)";
+            // 
+            // nQueryOpacityLabel27
+            // 
+            this.nQueryOpacityLabel27.BackColor = System.Drawing.Color.Transparent;
+            this.nQueryOpacityLabel27.Font = new System.Drawing.Font("HGSｺﾞｼｯｸE", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.nQueryOpacityLabel27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.nQueryOpacityLabel27.Location = new System.Drawing.Point(17, 393);
+            this.nQueryOpacityLabel27.Name = "nQueryOpacityLabel27";
+            this.nQueryOpacityLabel27.Size = new System.Drawing.Size(610, 39);
+            this.nQueryOpacityLabel27.TabIndex = 37;
+            this.nQueryOpacityLabel27.Text = "※ライブラリに収録されているコントロールを使用する必要があります。\r\nまた、マシンによってはかなり画面がちらつくため、テスト中の実装です。";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(775, 774);
-            this.Controls.Add(this.lblSizeEn);
-            this.Controls.Add(this.lblSizeJa);
-            this.Controls.Add(this.pnlSizeSample);
-            this.Controls.Add(this.lblFadeEn);
-            this.Controls.Add(this.pnlFadeSample);
-            this.Controls.Add(this.lblFadeJa);
+            this.ClientSize = new System.Drawing.Size(775, 497);
             this.Controls.Add(this.lblWhatEn);
             this.Controls.Add(this.lblWhatJa);
             this.Controls.Add(this.pnlWhat);
-            this.Controls.Add(this.lblQuery);
             this.Controls.Add(this.lblMoveEn);
             this.Controls.Add(this.lblMoveJa);
             this.Controls.Add(this.pnlMoveSample);
+            this.Controls.Add(this.lblSizeEn);
+            this.Controls.Add(this.pnlSizeSample);
+            this.Controls.Add(this.lblSizeJa);
+            this.Controls.Add(this.lblFadeEn);
+            this.Controls.Add(this.pnlFadeSample);
+            this.Controls.Add(this.lblFadeJa);
+            this.Controls.Add(this.lblQuery);
             this.Font = new System.Drawing.Font("Utsaah", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -691,11 +882,13 @@
             this.pnlMoveSample.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlSizeSample.ResumeLayout(false);
-            this.pnlFadeSample.ResumeLayout(false);
-            this.pnlFadeSample.PerformLayout();
             this.pnlWhat.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.pnlSizeSample.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.pnlFadeSample.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -721,11 +914,9 @@
         private System.Windows.Forms.TextBox txtOpaSpeed;
         private System.Windows.Forms.Label lblSizeEn;
         private System.Windows.Forms.Label lblSizeJa;
-        private System.Windows.Forms.Panel pnlSizeSample;
         private System.Windows.Forms.Label lblFadeEn;
         private System.Windows.Forms.Label lblWhatEn;
         private System.Windows.Forms.Label lblFadeJa;
-        private System.Windows.Forms.Panel pnlFadeSample;
         private nQueryLib.UI.nQueryOpacityLabel lblQuery;
         private System.Windows.Forms.Panel panel1;
         private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel2;
@@ -753,6 +944,23 @@
         private System.Windows.Forms.Button btnDoRight;
         private System.Windows.Forms.Button btnDoLeft;
         private System.Windows.Forms.Button btnOrgPos;
+        private System.Windows.Forms.Panel pnlSizeSample;
+        private System.Windows.Forms.Panel panel4;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel19;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel20;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel21;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel22;
+        private System.Windows.Forms.Panel pnlFadeSample;
+        private System.Windows.Forms.Panel panel5;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel23;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel24;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel25;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel26;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private nQueryLib.UI.nQueryOpacityLabel nQueryOpacityLabel27;
     }
 }
 
